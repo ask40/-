@@ -26,11 +26,11 @@ void Search(int index, int len, const string& str) {
     }
     for (int i = index; i < len; i++)
     {
-        if (isalpha(str[i])) // 拼接单词
+        if (isalpha(str[i])) // 组成单词
         {
             wd += str[i];
         }
-        else if (isalpha(str[i - 1]) && !isalpha(str[i])) // 找到一个单词
+        else if (isalpha(str[i - 1]) && !isalpha(str[i])) // 判定一个单词组成完成
         {
             for (int j = 0; j < 32; j++)
             {
@@ -39,7 +39,7 @@ void Search(int index, int len, const string& str) {
                     key[j].KeyNum++;
                 }
             }
-            wd = "";  // wd 设置为空，重新开始下一个单词的拼接
+            wd = "";  // 开始组成下一个单词
         }
     }
 }
